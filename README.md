@@ -91,3 +91,14 @@ streamlit run app.py   #launch the local server
 
 ```
 #python detect.py --weights runs/train/exp/weights/best.pt --source ../datasets/your_path_to_the_images.jpeg
+```
+
+# Add modification
+
+
+```bash
+cd PCBDefectDetection
+git add . 
+git commit -m "adding work"
+git push origin master  
+``` 
