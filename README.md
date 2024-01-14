@@ -12,22 +12,24 @@ The service, accessible through API and web site, intended to help sort defectiv
 It takes as an input an image to analyzed (jpeg, gif or png) 
 And send back an image with the detectection, the analysis and the data as a JSON file.
 
-The program is trained to detect 6 faults:
+The program is trained to detect 6 faults: missing hole, mouse bite, open circuit, short, spur, and spurious copper
+
+
+
+# Details
+- Package: Matefede1/PCBDefectDetection
+- Description: Customize a Object Detection Neural Network into a Defect Detection model to improve manufacture process at different critical stages
+- From model yolov5 : https://github.com/ultralytics/yolov5
+- Train with datatset PCB-defects : https://www.kaggle.com/datasets/akhatova/pcb-defects/code
+This is a public synthetic PCB dataset containing 1386 images, released by the Open Lab on Human Robot Interaction of Peking University
+PCB dataset was created using public link from https://github.com/Ixiaohuihuihui/Tiny-Defect-Detection-for-PCB
+- Classifaction 
     0: Missing_hole
     1: Mouse_bite
     2: Open_circuit
     3: Short
     4: Spur
     5: Spurious_copper
-
-
-# Details
-- Package: Matefede1/PCBDefectDetection
-- Description: Customize a Object Detection Neural Network into a Defect Detection model to improve manufacture process at different critical stages
-- Data Source: xxxxxx (to be completed)
-- Type of model: yolov5 (to be completed) 
-- Classifaction :
-
 
 # Package 
 - fast_api 
@@ -38,7 +40,9 @@ The program is trained to detect 6 faults:
     * trained for PCB failure detecture with 6 labels 
 
 # Data
+Download the dataset from https://drive.google.com/drive/folders/1o7nf0rZ1JBzTNvth6Vs2yKlmt4yN10QQ
 
+It contains:
 - Datasets/images/train
 - Datasets/images/val
 - Datasets/labels/train
@@ -83,4 +87,7 @@ cd ../prueba_streamlit
 streamlit run app.py   #launch the local server 
 ```
 
+# Inference
 
+```
+#python detect.py --weights runs/train/exp/weights/best.pt --source ../datasets/your_path_to_the_images.jpeg
