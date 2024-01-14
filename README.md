@@ -40,29 +40,30 @@ The program is trained to detect 6 faults: missing hole, mouse bite, open circui
 
 # Package 
 
-The package contains 4 directory 
+The package contains 4 directories
 
-- datasets  >>> dataset used to train the model
-- fast_api  >>> API web service
-- prueba_streamlit >>> Webb site
-- yolov5 >>> model used for prediction 
+The dataset used to train the model : dataset
+The API web service directpry : fast_api  
+The web site directory : prueba_streamlit  
+The model used for prediction directory : yolov5  
     
 # Data
 
-
-Download the dataset from https://drive.google.com/drive/folders/1o7nf0rZ1JBzTNvth6Vs2yKlmt4yN10QQ
+First, download the dataset from https://drive.google.com/drive/folders/1o7nf0rZ1JBzTNvth6Vs2yKlmt4yN10QQ
+Unzip it and rename it datasets
 
 It contains:
-- Datasets/images/train
-- Datasets/images/val
-- Datasets/labels/train
-- Datasets/labes/val
+- datasets/images/train
+- datasets/images/val
+- datasets/labels/train
+- datasets/labes/val
 
 # Startup the project
 
 The initial setup.
 
-Create virtualenv and install the project:
+Create a python3 virtualenv and activate it:
+
 ```bash
 sudo apt-get install virtualenv python-pip python-dev
 deactivate; virtualenv ~/venv ; source ~/venv/bin/activate ;\
@@ -70,24 +71,22 @@ deactivate; virtualenv ~/venv ; source ~/venv/bin/activate ;\
 
 # Install
 
-Go to `https://github.com/Matefede1/PCBDefectDetection/` to see the project, manage issues,
-setup you ssh public key, ...
+Install the project:
 
-Create a python3 virtualenv and activate it:
+Go to `https://github.com/Matefede1/PCBDefectDetection/` 
 
 
 Clone the project and install it:
 
 ```bash
 git clone git@github.com:Matefede1/PCBDefectDetection.git #clone
-cd PCBDefectDetectio
+cd PCBDefectDetection
 pip install -r requirements.txt #install
 ```
 
 # Use the service
 
-The launch local service 
-
+Launch the service locally 
 
 ```bash
 cd fast_api
