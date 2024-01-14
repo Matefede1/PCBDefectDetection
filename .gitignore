@@ -1,1 +1,12 @@
-raw_data/
+
+# Datasets
+venv/
+env/
+datasets/
+
+# Variable
+*.env
+
+#Models
+yolov5/
+
