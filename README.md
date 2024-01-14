@@ -17,12 +17,19 @@ The program is trained to detect 6 faults: missing hole, mouse bite, open circui
 
 
 # Details
+
 - Package: Matefede1/PCBDefectDetection
+
 - Description: Customize a Object Detection Neural Network into a Defect Detection model to improve manufacture process at different critical stages
+
 - From model yolov5 : https://github.com/ultralytics/yolov5
-- Train with datatset PCB-defects : https://www.kaggle.com/datasets/akhatova/pcb-defects/code
-This is a public synthetic PCB dataset containing 1386 images, released by the Open Lab on Human Robot Interaction of Peking University
-PCB dataset was created using public link from https://github.com/Ixiaohuihuihui/Tiny-Defect-Detection-for-PCB
+    * YOLOv5 🚀 is the world's most loved vision 
+    * trained with 80 classes and coco datasets (188k images for training, 5k images for validation
+    * retrained for PCB failure detecture with 6 labels and PCB-defects dataset (xx images for traing, xx images for validation) :
+       - https://www.kaggle.com/datasets/akhatova/pcb-defects/code
+       - This is a public synthetic PCB dataset containing 1386 images, released by the Open Lab on Human Robot Interaction of Peking University
+       - PCB dataset was created using public link from https://github.com/Ixiaohuihuihui/Tiny-Defect-Detection-for-PCB
+
 - Classifaction 
     0: Missing_hole
     1: Mouse_bite
@@ -32,14 +39,17 @@ PCB dataset was created using public link from https://github.com/Ixiaohuihuihui
     5: Spurious_copper
 
 # Package 
-- fast_api 
-- datasets
-- prueba_streamlit
-- yolov5 :
-    * modele : https://github.com/ultralytics/yolov5
-    * trained for PCB failure detecture with 6 labels 
 
+The package contains 4 directory 
+
+- datasets  >>> dataset used to train the model
+- fast_api  >>> API web service
+- prueba_streamlit >>> Webb site
+- yolov5 >>> model used for prediction 
+    
 # Data
+
+
 Download the dataset from https://drive.google.com/drive/folders/1o7nf0rZ1JBzTNvth6Vs2yKlmt4yN10QQ
 
 It contains:
