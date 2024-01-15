@@ -46,10 +46,10 @@ The program is trained to detect 6 faults: missing hole, mouse bite, open circui
 
 The package contains 4 directories
 
-The dataset used to train the model : dataset
-The API web service directpry : fast_api  
-The web site directory : prueba_streamlit  
-The model used for prediction directory : yolov5 
+1) dataset - the dataset used to train the model 
+2) fast_api - the API web service directpry  
+3) prueba_streamlit - the web site directory : 
+4) yolov5 - the model used for prediction directory 
 
 
 # Data
