@@ -38,6 +38,10 @@ The program is trained to detect 6 faults: missing hole, mouse bite, open circui
     4: Spur
     5: Spurious_copper
 
+# Results
+
+![Texte alternatif](example_prediction.jpeg)
+
 # Package 
 
 The package contains 4 directories
@@ -45,8 +49,9 @@ The package contains 4 directories
 The dataset used to train the model : dataset
 The API web service directpry : fast_api  
 The web site directory : prueba_streamlit  
-The model used for prediction directory : yolov5  
-    
+The model used for prediction directory : yolov5 
+
+
 # Data
 
 First, download the dataset from https://drive.google.com/drive/folders/1o7nf0rZ1JBzTNvth6Vs2yKlmt4yN10QQ
