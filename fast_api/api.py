@@ -2,6 +2,7 @@ from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import Response
 
+import os
 import numpy as np
 import cv2
 import io
@@ -40,15 +41,24 @@ async def receive_image(img: UploadFile=File(...)):
     output_path='./img_output/image.jpeg'
     save_image(cv2_img, output_path)
 
-     #Do the prediction
-    run_yolov5_detection('./img_output/image.jpeg')
+    try:
+        # Do the prediction
+        run_yolov5_detection(output_path)
 
-    # where is the image after the prediction
-    image_path = '../yolov5/runs/detect/exp/image.jpeg'
+        # Path where the image is after the prediction
+        annotated_image_path = '../yolov5/runs/detect/exp/image.jpeg'
 
-    # Read the image i
-    annotated_img = cv2.imread(image_path)
+        # Read the annotated image
+        annotated_img = cv2.imread(annotated_image_path)
 
-    ### Responding with the image
-    im = cv2.imencode('.png', annotated_img)[1] # extension depends on which format is sent from Streamlit
-    return Response(content=im.tobytes(), media_type="image/png")
+        ### Responding with the image
+        im = cv2.imencode('.png', annotated_img)[1]
+        return Response(content=im.tobytes(), media_type="image/png")
+
+
+    finally:
+        # Cleanup: delete the saved images
+        if os.path.exists(output_path):
+            os.remove(output_path)
+        if os.path.exists(annotated_image_path):
+            os.remove(annotated_image_path)
