@@ -1,11 +1,12 @@
 import subprocess
 import cv2
 
-def run_yolov5_detection(source):
+def run_yolov5_detection(source, conf):
     command = [
         "python", "../yolov5/detect.py",
         "--weights", "../yolov5/runs/train/exp/weights/best_xl.pt",
         "--source", source,
+        "--conf-thres", conf
     ]
 
 

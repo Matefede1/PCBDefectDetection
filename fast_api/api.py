@@ -29,7 +29,7 @@ def index():
     return {"status": "ok"}
 
 @app.post('/upload_image')
-async def receive_image(img: UploadFile=File(...)):
+async def receive_image(img: UploadFile=File(...), conf: float=0.25):
     ### Receiving and decoding the image from the fast api
     contents = await img.read()
     nparr = np.fromstring(contents, np.uint8)
@@ -43,7 +43,7 @@ async def receive_image(img: UploadFile=File(...)):
 
     try:
         # Do the prediction
-        run_yolov5_detection(output_path)
+        run_yolov5_detection(output_path,str(conf))
 
         # Path where the image is after the prediction
         annotated_image_path = '../yolov5/runs/detect/exp/image.jpeg'
